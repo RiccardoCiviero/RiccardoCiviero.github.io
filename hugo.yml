@@ -7,10 +7,11 @@ paginate: 5
 params:
   # dir name of your blog content (default is `content/posts`)
   contentTypeName: posts
+
   # ["orange", "blue", "red", "green", "pink"]
-  themeColor: green
+  themeColor: blue
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems: 5
+  showMenuItems: 3
   # show selector to switch language
   showLanguageSelector: true
   # set theme to full screen width
@@ -18,61 +19,85 @@ params:
   # center theme with default width
   centerTheme: true
 
+  # if your resource directory contains an image called `cover.(jpg|png|webp)`,
+  # then the file will be used as a cover automatically.
+  # With this option you don't have to put the `cover` param in a front-matter.
+  autoCover: true
+
+  # set post to show the last updated
+  # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
+  # showLastUpdated: true
+
+  # set a custom favicon (default is a `themeColor` square)
+  #favicon: favicon.ico
+
+  # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
+  # updatedDatePrefix: Updated
+
+  # set all headings to their default size (depending on browser settings)
+  # oneHeadingSize: true # default
+
+  # whether to show a page's estimated reading time
+  readingTime: false
+
+  # whether to show a table of contents
+  # can be overridden in a page's front-matter
+  # Toc: false # default
+
+  # set title for the table of contents
+  # can be overridden in a page's front-matter
+  # TocTitle: "Table of Contents" # default
+
 languages:
   en:
     languageName: English
-    title: Your site title
-    subtitle: Your site subtitle
+    title: Riccardo Civiero
+    subtitle: My personal blog
     keywords: ''
     menuMore: Show more
     readMore: Read more
     readOtherPosts: Read other posts
-
-    params:
-      logo:
-        logoText: Terminal
-        logoHomeLink: /
+    newerPosts: "Newer posts"
+    olderPosts: "Older posts"
+    missingContentMessage: "Page not found..."
+    missingBackButtonLabel: "Back to home page"
+    minuteReadingTime: "min read"
+    words: "words"
 
     menu:
       main:
+      - identifier: posts
+        name: Posts
+        url: /posts
+        weight: 1
       - identifier: about
         name: About
         url: /about
-      - identifier: showcase
-        name: Showcase
-        url: /showcase
-  
+        weight: 2
+
+    params:
+      logo:
+        logoText: Riccardo Civiero
+        logoHomeLink: /
+      
+    
+
+
   it:
     languageName: Italiano
 
+    menu:
+      main:
+      - identifier: articoli
+        name: Articoli
+        url: /posts
+        weight: 1
+      - identifier: chisono
+        name: Chi Sono
+        url: /about
+        weight: 2
 
-
-#enableInlineShortcodes: true
-#enableRobotsTXT: true
-#buildDrafts: false
-#buildFuture: false
-#buildExpired: false
-#enableEmoji: true
-#pygmentsUseClasses: true
-#
-#minify:
-#    disableXML: true
-#
-#languages:
-#    it:
-#      languageName: "Italiano"
-#      weight: 1
-#      taxonomies:
-#        tag: tags
-#
-#      menu:
-#        main:
-#          - name: Search
-#            url: search/
-#            weight: 10
-#
-#    en:
-#      languageName: English
-#      weight: 2
-#      taxonomies:
-#        tag: tags
+    params:
+      logo:
+        logoText: Riccardo Civiero
+        logoHomeLink: /it
